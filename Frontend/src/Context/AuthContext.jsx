@@ -1,14 +1,13 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axiosInstance from "../api/axiosConfig";
 import { useNavigate } from "react-router-dom"; // for potential redirection
-
+import Cookies from 'js-cookie';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null); // Add user state
   const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate(); // optional, in case you need redirection on auth check
 
   useEffect(() => {

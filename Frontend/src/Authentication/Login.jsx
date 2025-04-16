@@ -5,6 +5,7 @@ import axiosInstance from "../api/axiosConfig";
 
 export default function Login() {
   const { setIsAuthenticated, setUser } = useAuthContext();
+  const [islogged,setislogged]=useState(false)
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
